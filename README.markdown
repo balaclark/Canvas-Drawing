@@ -3,8 +3,8 @@ Canvas Drawing
 
 About
 -----
-This is a small helper library aimed at making writing drawing applications with 
-the HTML5 canvas element a bit easier.
+This is a small engine for the canvas element aimed at making development of drawing
+applications a bit easier.
 
 License
 -------
