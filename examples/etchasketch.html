@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas</title>
+
+		<!--[if lt IE 9]><script type="text/javascript" src="../lib/excanvas.compiled.js"></script><![endif]-->
+		<script src="../lib/canvasdrawing.js"></script>
+		<script src="etchasketch.js"></script>
+
+		<style>
+			canvas {
+				border: solid 1px #ccc;
+				padding: 5px;
+			}
+
+			#etch { 
+				width: 500px;
+				margin: 0 auto;
+			}
+
+			div.knob {
+				background-color: #ccc;
+				width: 50px;
+				height: 50px;
+				border-radius: 50px;
+				cursor: pointer;
+			}
+
+			#left.knob { float: left }
+			#right.knob { float: right }
+		</style>
+	</head>
+<body>
+	<div id="etch">
+		<canvas id="canvas" width="500" height="300">
+			<p>Your browser doesn't support canvas</p>
+		</canvas>
+
+		<div id="controls">
+			<div id="left" class="knob"></div>
+			<div id="right" class="knob"></div>
+		</div>
+	</div>
+</body>
+</html>
