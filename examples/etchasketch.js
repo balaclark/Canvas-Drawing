@@ -74,23 +74,24 @@ function dial(e) {
 window.onload = function() {
 
 	// initialise the canvas drawing
-	var etch = new CanvasDrawing("canvas", {
+	var i, dials, etch = new CanvasDrawing("canvas", {
 		lineWidth: 1,
 		color: "#666",
 		freeDrawing: false // this stops the user from drawing directly onto the canvas with mouse / touch
 	});
 
-	// bind mouse controls
-	document.getElementById("left").addEventListener("mousedown", dial, false);
-	document.getElementById("left").addEventListener("mousemove", dial, false);
-	document.getElementById("right").addEventListener("mousedown", dial, false);
-	document.getElementById("right").addEventListener("mousemove", dial, false);
-	document.addEventListener("mouseup", etch.drawStop, false);
+	dials = document.getElementById("controls").getElementsByTagName("div");
 
-	// bind touch controls
-	document.getElementById("left").addEventListener("touchstart", dial, false);
-	document.getElementById("left").addEventListener("touchmove", dial, false);
-	document.getElementById("right").addEventListener("touchstart", dial, false);
-	document.getElementById("right").addEventListener("touchmove", dial, false);
+	// bind controls
+	for (i=0; i < dials.length; i++) {
+		// mouse
+		dials[i].addEventListener("mousedown", dial, false);
+		dials[i].addEventListener("mousemove", dial, false);
+		// touch
+		dials[i].addEventListener("touchstart", dial, false);
+		dials[i].addEventListener("touchmove", dial, false);
+	}
+
+	document.addEventListener("mouseup", etch.drawStop, false);
 	document.addEventListener("touchend", etch.drawStop, false);
 };
