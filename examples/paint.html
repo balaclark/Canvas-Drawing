@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas</title>
+
+		<!--[if lt IE 9]><script type="text/javascript" src="../lib/excanvas.compiled.js"></script><![endif]-->
+		<script src="../lib/canvasdrawing.js"></script>
+		<script src="paint.js"></script>
+
+		<style>
+			#wrapper {
+				width: 530px;
+				margin: 0 auto;
+			}
+			canvas {
+				border: solid 1px #ccc;
+				cursor: crosshair;
+				float: left;
+			}
+			#controls { float: right; }
+			#swatch div {
+				width: 25px;
+				height: 25px;
+				margin: 1px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+<body>
+	<div id="wrapper">
+		<canvas id="canvas" width="500" height="300">
+			<p>Your browser doesn't support canvas</p>
+		</canvas>
+
+		<div id="controls">
+			<div id="swatch">
+				<div data-color="#f00"></div>
+				<div data-color="green"></div>
+				<div data-color="blue"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
