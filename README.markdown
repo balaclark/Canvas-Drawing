@@ -8,14 +8,14 @@ applications a bit easier.
 
 Examples
 --------
-	* Basic, only default settings & no extra user controls.
-	  http://balaclark.com/code/canvas/examples/basic.html
+* Basic, only default settings & no extra user controls.
+  http://balaclark.com/code/canvas/examples/basic.html
 
-	* A (very) simple paint application.
-	  http://balaclark.com/code/canvas/examples/paint.html
+* A (very) simple paint application.
+  http://balaclark.com/code/canvas/examples/paint.html
 
-	* A yet to be styled Etch A Sketch®
-	  http://balaclark.com/code/canvas/examples/etchasketch.html
+* A yet to be styled Etch A Sketch®
+  http://balaclark.com/code/canvas/examples/etchasketch.html
 
 License
 -------
