@@ -10,17 +10,16 @@
 
 		<style>
 			#wrapper {
-				width: 535px;
+				width: 580px;
 				margin: 0 auto;
 			}
-			canvas {
+			canvas, .controls { 
 				border: solid 1px #ccc;
-				cursor: crosshair;
 				float: left;
+				margin: 2px;
 			}
-			#controls {
-				float: right;
-				margin-bottom: 5px;
+			canvas {
+				cursor: crosshair;
 			}
 			.control {
 				padding: 2px;
@@ -37,38 +36,46 @@
 				background-color: #fff;
 				text-align: center;
 			}
+			.control.text { font-size: 12px; }
 			div[data-color=white] { border: solid 1px #666; }
 			#brush-size { 
 				cursor: default;
 				color: #666;
 				background-color: transparent;
 			}
-			#clear div {
-				font-size: 12px;
-			}
 		</style>
 	</head>
 <body>
 	<div id="wrapper">
+
+		<div class="controls">
+			<div class="control" id="brush-sizes">
+				<div data-increment="+2">+</div>
+				<div data-increment="-2">-</div>
+				<div id="brush-size"></div>
+			</div>
+
+			<div class="control text" id="brushes">
+				<div>marker</div>
+				<div>spray</div>
+			</div>
+
+			<div class="control text" id="clear">
+				<div>clear</div>
+			</div>
+		</div>
+		
 		<canvas id="canvas" width="500" height="300">
 			<p>Your browser doesn't support canvas</p>
 		</canvas>
 
-		<div id="controls">
+		<div class="controls">
 			<div class="control" id="swatches">
 				<div data-color="red"></div>
 				<div data-color="green"></div>
 				<div data-color="blue"></div>
 				<div data-color="black"></div>
 				<div data-color="white"></div>
-			</div>
-			<div class="control" id="brush-sizes">
-				<div data-increment="+2">+</div>
-				<div data-increment="-2">-</div>
-				<div id="brush-size">2</div>
-			</div>
-			<div class="control" id="clear">
-				<div>clear</div>
 			</div>
 		</div>
 	</div>

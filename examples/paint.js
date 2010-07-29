@@ -3,13 +3,15 @@ var drawing;
 
 window.onload = function() {
 
-	drawing = new CanvasDrawing("canvas", { lineWidth: 20, color: "olive" })
+	drawing = new CanvasDrawing("canvas");
 
 	var i,
 		swatches = document.getElementById("swatches").getElementsByTagName("div"),
+		brushes = document.getElementById("brushes").getElementsByTagName("div"),
 		brushSizes = document.getElementById("brush-sizes").getElementsByTagName("div");
 
-	// colour swatches
+	// colour swatches ---------------------------------------------------------
+
 	for (i=0; i < swatches.length; i++) {
 
 		// colour the swatches
@@ -21,7 +23,10 @@ window.onload = function() {
 		}, false);
 	}
 
-	// brush sizes
+	// brush sizes -------------------------------------------------------------
+	
+	document.getElementById("brush-size").innerHTML = Math.floor(drawing.options.lineWidth);
+	
 	for (i=0; i < 2; i++) {
 		brushSizes[i].addEventListener("click", function() {
 
@@ -33,6 +38,15 @@ window.onload = function() {
 		}, false);
 	}
 
-	// clear
+	// brushes -----------------------------------------------------------------
+
+	for (i=0; i < brushes.length; i++) {
+		brushes[i].addEventListener("click", function() {
+			drawing.setOption("brush", this.innerHTML);
+		}, false);
+	}
+
+	// clear canvas ------------------------------------------------------------
+	
 	document.getElementById("clear").addEventListener("click", drawing.clearCanvas, false);
 };
