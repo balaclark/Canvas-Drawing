@@ -6,6 +6,17 @@ About
 This is a small engine for the canvas element aimed at making development of drawing
 applications a bit easier.
 
+Examples
+--------
+	* Basic, only default settings & no extra user controls.
+	  http://balaclark.com/code/canvas/examples/basic.html
+
+	* A (very) simple paint application.
+	  http://balaclark.com/code/canvas/examples/paint.html
+
+	* A yet to be styled Etch A Sketch®
+	  http://balaclark.com/code/canvas/examples/etchasketch.html
+
 License
 -------
 Copyright 2010 Bala Clark
