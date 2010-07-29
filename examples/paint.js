@@ -1,10 +1,13 @@
+
+var drawing;
+
 window.onload = function() {
-	
-	var i, drawing = new CanvasDrawing("canvas"),
+
+	drawing = new CanvasDrawing("canvas", { lineWidth: 20, color: "olive" })
+
+	var i,
 		swatches = document.getElementById("swatches").getElementsByTagName("div"),
 		brushSizes = document.getElementById("brush-sizes").getElementsByTagName("div");
-
-	// setup controls
 
 	// colour swatches
 	for (i=0; i < swatches.length; i++) {
@@ -21,8 +24,10 @@ window.onload = function() {
 	// brush sizes
 	for (i=0; i < 2; i++) {
 		brushSizes[i].addEventListener("click", function() {
+
 			// set line width
 			drawing.setOption("lineWidth", drawing.options.lineWidth + parseInt(this.getAttribute("data-increment"), 10));
+
 			// display current line width
 			document.getElementById("brush-size").innerHTML = Math.floor(drawing.options.lineWidth);
 		}, false);
