@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas</title>
+
+		<!--[if lt IE 9]><script type="text/javascript" src="../lib/excanvas.compiled.js"></script><![endif]-->
+		<script src="animation.js"></script>
+
+		<style>
+			canvas {
+				border: solid 1px #ccc;
+			}
+			#wrapper {
+				width: 500px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+<body>
+	<div id="wrapper">
+		<p id="status">waiting for input.</p>
+		<canvas id="canvas" width="500" height="300">
+			<p>Your browser doesn't support canvas</p>
+		</canvas>
+	</div>
+</body>
+</html>
