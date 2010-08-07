@@ -3,7 +3,7 @@ var drawing;
 
 window.onload = function() {
 
-	drawing = new CanvasDrawing("canvas", { lineWidth: 5 });
+	drawing = new CanvasDrawing("canvas", { lineWidth: 1, smoothBrush: true });
 
 	var i,
 		swatches = document.getElementById("swatches").getElementsByTagName("div"),
