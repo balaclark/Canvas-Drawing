@@ -11,7 +11,8 @@ window.onload = function() {
 	// initialise the canvas drawing
 	var i, dials, etch = new CanvasDrawing("canvas", {
 		lineWidth: 1,
-		color: "#666",
+		color: "black",
+		smoothDraw: false, // don't need to do the extra work smoothing curves as we are drawing straight lines only
 		freeDrawing: false // this stops the user from drawing directly onto the canvas with mouse / touch
 	});
 
@@ -38,7 +39,8 @@ function dial(e) {
 	var cd = CanvasDrawing.prototype,
 		offset = e.offset(), // mouse positions
 		side,		// the active side of dial
-		direction,	// the direction the dial is rotating
+		direction,	// the direction the dial is rotating,
+		increment = 2;
 
 	// use default start positions if this is a new drawing
 	x = (typeof cd.oldX === "undefined") ? cd.options.lineWidth : cd.oldX,
@@ -63,12 +65,12 @@ function dial(e) {
 				y = cd.oldY;
 
 				// draw right
-				if (side === "left" && direction === "up") { x = cd.oldX + 1; }
-				if (side === "right" && direction === "down") { x = cd.oldX + 1; }
+				if (side === "left" && direction === "up") { x = cd.oldX + increment; }
+				if (side === "right" && direction === "down") { x = cd.oldX + increment; }
 				
 				// draw left
-				if (side === "left" && direction === "down") { x = cd.oldX - 1; }
-				if (side === "right" && direction === "up") { x = cd.oldX - 1; }
+				if (side === "left" && direction === "down") { x = cd.oldX - increment; }
+				if (side === "right" && direction === "up") { x = cd.oldX - increment; }
 			}
 
 			// right dial controls
@@ -77,12 +79,12 @@ function dial(e) {
 				x = cd.oldX;
 
 				// draw up
-				if (side === "left" && direction === "up") { y = cd.oldY - 1; }
-				if (side === "right" && direction === "down") { y = cd.oldY - 1; }
+				if (side === "left" && direction === "up") { y = cd.oldY - increment; }
+				if (side === "right" && direction === "down") { y = cd.oldY - increment; }
 
 				// draw down
-				if (side === "left" && direction === "down") { y = cd.oldY + 1; }
-				if (side === "right" && direction === "up") { y = cd.oldY + 1; }
+				if (side === "left" && direction === "down") { y = cd.oldY + increment; }
+				if (side === "right" && direction === "up") { y = cd.oldY + increment; }
 			}
 			
 			// correct pointers if they exceed the canvas dimensions
